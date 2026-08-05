@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+backend/venv/
+backend/.env
+.pytest_cache/
+
+# Data (raw downloads can be large; we'll document how to regenerate them)
+backend/app/data_pipeline/raw/
+# backend/app/data_pipeline/processed/
+git add backend/app/data_pipeline/processed/
+git commit -m "Include processed data for deployment"
+git push
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Editor / OS
+.vscode/
+.DS_Store
+*.log

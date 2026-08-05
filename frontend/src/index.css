@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  color-scheme: dark;
+
+  /* Base surfaces */
+  --bg-base: #0D1420;
+  --bg-surface: #16202E;
+  --bg-surface-2: #1F2C3D;
+  --border: #2A3648;
+
+  /* Text */
+  --text-primary: #E7ECF2;
+  --text-muted: #7C8CA3;
+  --text-faint: #4B5A6E;
+
+  /* Semantic accents - each has exactly one job */
+  --accent-bank: #4FC3B0;     /* lenders (supply side) */
+  --accent-bank-dim: #2F6E68;
+  --accent-bdc: #D9A441;      /* borrowers (demand side) */
+  --accent-bdc-dim: #7A5F2C;
+  --accent-distress: #E5484D; /* reserved exclusively for contagion/risk - never decorative */
+  --accent-distress-dim: #5C2426;
+
+  --font-display: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent-bank-dim);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-bank);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
