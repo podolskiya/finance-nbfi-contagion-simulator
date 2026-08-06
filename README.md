@@ -3,6 +3,7 @@
 An interactive tool that reconstructs a bilateral exposure network between U.S. banks and non-bank financial institutions — specifically business development companies (BDCs), the SEC-registered vehicles that make up the disclosed slice of the private credit market — and runs Eisenberg-Noe clearing and DebtRank cascade simulations on top of it. Shock a node (a bank, a BDC) and watch losses propagate through the network.
 
 <b>Try</b>: https://finance-nbfi-contagion-simulator.onrender.com/
+
 <b>Example</b>: 
 <img width="1907" height="930" alt="image" src="https://github.com/user-attachments/assets/46b0990f-eb57-4eb9-a876-4f2b19bbee06" />
 
