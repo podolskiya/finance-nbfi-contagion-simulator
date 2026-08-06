@@ -39,3 +39,18 @@ app.include_router(simulate.router)
 @app.get("/health")
 def health_check() -> dict:
     return {"status": "ok", "app": settings.app_name, "phase": "5 - backend API"}
+
+
+# Serve the built frontend (frontend/dist) if present - lets one Render
+# service host both the API and the UI, avoiding a second service, CORS
+# configuration, and cross-service URL wiring entirely. Only mounted when
+# the built files actually exist, so local `uvicorn --reload` development
+# (where the frontend runs separately via `npm run dev` on its own port)
+# is unaffected. Mounted LAST and at "/" so it only catches requests that
+# don't match /health or /api/... above - order matters here.
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
+FRONTEND_DIST = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+if FRONTEND_DIST.exists():
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIST), html=True), name="frontend")
