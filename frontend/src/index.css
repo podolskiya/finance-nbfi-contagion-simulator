@@ -1,32 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
-  color-scheme: dark;
-
-  /* Base surfaces */
-  --bg-base: #0D1420;
-  --bg-surface: #16202E;
-  --bg-surface-2: #1F2C3D;
-  --border: #2A3648;
-
-  /* Text */
-  --text-primary: #E7ECF2;
-  --text-muted: #7C8CA3;
-  --text-faint: #4B5A6E;
-
-  /* Semantic accents - each has exactly one job */
-  --accent-bank: #4FC3B0;     /* lenders (supply side) */
-  --accent-bank-dim: #2F6E68;
-  --accent-bdc: #D9A441;      /* borrowers (demand side) */
-  --accent-bdc-dim: #7A5F2C;
-  --accent-distress: #E5484D; /* reserved exclusively for contagion/risk - never decorative */
-  --accent-distress-dim: #5C2426;
-
-  --font-display: 'IBM Plex Sans', system-ui, sans-serif;
-  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  color-scheme: light;
+  --bg-base: #F6F7FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-2: #EEF1F5;
+  --border: #DDE2EA;
+  --text-primary: #16202E;
+  --text-muted: #55637A;
+  --text-faint: #94A2B8;
+  --accent-bank: #1F9D8A;      
+  --accent-bank-dim: #D8F0EC;
+  --accent-bdc: #C08A2E;        
+  --accent-bdc-dim: #F3E6CC;
+  --accent-distress: #D63B41;   
+  --accent-distress-dim: #FBE4E5;
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Montserrat', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
-
-  --radius: 6px;
+  --radius: 8px;
+  --shadow-card: 0 1px 2px rgba(22, 32, 46, 0.04), 0 1px 8px rgba(22, 32, 46, 0.04);
 }
 
 * {
