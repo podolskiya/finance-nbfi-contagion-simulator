@@ -76,10 +76,21 @@ function App() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          background: "var(--bg-surface)",
+          boxShadow: "var(--shadow-card)",
+          zIndex: 1,
         }}
       >
-        <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, letterSpacing: "0.3px" }}>
-          NBFI CONTAGION SIMULATOR
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <img
+            src="/logo.svg"
+            alt="Logo"
+            style={{ height: 28, width: "auto" }}
+            onError={(e) => (e.target.style.display = "none")}
+          />
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: "0.2px" }}>
+            NBFI CONTAGION SIMULATOR
+          </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 11, color: "var(--text-faint)", fontFamily: "var(--font-mono)" }}>
           <LegendDot color="var(--accent-bank)" label="Bank" />
@@ -112,12 +123,12 @@ function App() {
 
         <aside
           style={{
-            width: 300,
+            width: 320,
             flexShrink: 0,
             borderLeft: "1px solid var(--border)",
             padding: 20,
             overflowY: "auto",
-            background: "var(--bg-surface)",
+            background: "var(--bg-base)",
           }}
         >
           <ControlPanel
