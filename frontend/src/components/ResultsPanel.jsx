@@ -11,9 +11,9 @@ export default function ResultsPanel({ results }) {
   const dr = results.debtrank;
 
   return (
-    <div style={{ marginTop: 24, borderTop: "1px solid var(--border)", paddingTop: 16, display: "flex", flexDirection: "column", gap: 20 }}>
+    <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 14 }}>
       {en && (
-        <section>
+        <div style={cardStyle}>
           <SectionTitle>Direct impact (Eisenberg-Noe)</SectionTitle>
           <Stat label="Recovery rate" value={`${(en.shocked_bdc.recovery_rate * 100).toFixed(1)}%`} alarm={en.shocked_bdc.is_distressed} />
           <Stat label="Insolvent banks" value={en.insolvent_bank_count} alarm={en.insolvent_bank_count > 0} />
@@ -21,20 +21,20 @@ export default function ResultsPanel({ results }) {
 
           {en.affected_banks.length > 0 && (
             <div style={{ marginTop: 10 }}>
-              <div style={{ fontSize: 11, color: "var(--text-faint)", marginBottom: 6 }}>TOP AFFECTED LENDERS</div>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "var(--text-faint)", marginBottom: 6 }}>TOP AFFECTED LENDERS</div>
               {en.affected_banks.slice(0, 5).map((b) => (
                 <RowItem key={b.rssd_id} label={b.bank_name} value={formatUsd(b.total_loss_usd)} sub={b.severity} />
               ))}
             </div>
           )}
-        </section>
+        </div>
       )}
 
       {dr && (
-        <section>
+        <div style={cardStyle}>
           <SectionTitle>Propagated distress (DebtRank)</SectionTitle>
           {en && !en.shocked_bdc.is_distressed && dr.affected_bdcs.length > 0 && (
-            <div style={{ fontSize: 11, color: "var(--text-faint)", lineHeight: 1.5, marginBottom: 10, padding: "8px 10px", background: "var(--bg-surface-2)", borderRadius: "var(--radius)" }}>
+            <div style={{ fontSize: 11, color: "var(--text-muted)", lineHeight: 1.5, marginBottom: 10, padding: "8px 10px", background: "var(--bg-surface-2)", borderRadius: "6px" }}>
               Not a contradiction: Eisenberg-Noe found no payment default here, but DebtRank treats the
               shocked BDC's own asset impairment as a stress signal on its own &mdash; modeling how
               counterparty concern can transmit before an outright default.
@@ -46,7 +46,7 @@ export default function ResultsPanel({ results }) {
 
           {dr.affected_bdcs.length > 0 && (
             <div style={{ marginTop: 10 }}>
-              <div style={{ fontSize: 11, color: "var(--text-faint)", marginBottom: 6 }}>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "var(--text-faint)", marginBottom: 6 }}>
                 MOST-AFFECTED BDCs (SHARED-LENDER CHANNEL)
               </div>
               {dr.affected_bdcs.slice(0, 5).map((b) => (
@@ -57,14 +57,22 @@ export default function ResultsPanel({ results }) {
               </div>
             </div>
           )}
-        </section>
+        </div>
       )}
     </div>
   );
 }
 
+const cardStyle = {
+  background: "var(--bg-surface)",
+  border: "1px solid var(--border)",
+  borderRadius: "var(--radius)",
+  boxShadow: "var(--shadow-card)",
+  padding: "16px",
+};
+
 function SectionTitle({ children }) {
-  return <h3 style={{ fontSize: 13, fontWeight: 600, margin: "0 0 10px 0", color: "var(--text-primary)" }}>{children}</h3>;
+  return <h3 style={{ fontSize: 13, fontWeight: 700, margin: "0 0 10px 0", color: "var(--text-primary)" }}>{children}</h3>;
 }
 
 function Stat({ label, value, alarm }) {
