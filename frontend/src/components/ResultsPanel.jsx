@@ -35,8 +35,8 @@ export default function ResultsPanel({ results }) {
           <SectionTitle>Propagated distress (DebtRank)</SectionTitle>
           {en && !en.shocked_bdc.is_distressed && dr.affected_bdcs.length > 0 && (
             <div style={{ fontSize: 11, color: "var(--text-muted)", lineHeight: 1.5, marginBottom: 10, padding: "8px 10px", background: "var(--bg-surface-2)", borderRadius: "6px" }}>
-              Not a contradiction: Eisenberg-Noe found no payment default here, but DebtRank treats the
-              shocked BDC's own asset impairment as a stress signal on its own &mdash; modeling how
+              Eisenberg-Noe found no payment default here, but DebtRank treats the
+              shocked BDC's own asset impairment as a stress signal on its own &mdash; modelling how
               counterparty concern can transmit before an outright default.
             </div>
           )}
