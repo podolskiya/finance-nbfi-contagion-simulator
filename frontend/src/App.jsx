@@ -96,7 +96,6 @@ function App() {
           <LegendDot color="var(--accent-bank)" label="Bank" />
           <LegendDot color="var(--accent-bdc)" label="BDC" />
           <LegendDot color="var(--accent-distress)" label="Distress" />
-          <span>bank &rarr; BDC exposure, reconstructed from Call Report + SEC filing data</span>
         </div>
       </header>
 
