@@ -5,7 +5,8 @@ An interactive tool that reconstructs a bilateral exposure network between U.S. 
 <b>Try</b>: https://finance-nbfi-contagion-simulator.onrender.com/
 
 <b>Example</b>: 
-<img width="1907" height="930" alt="image" src="https://github.com/user-attachments/assets/46b0990f-eb57-4eb9-a876-4f2b19bbee06" />
+<img width="1900" height="941" alt="image" src="https://github.com/user-attachments/assets/60333ada-0ccb-42d5-9e9c-9a5265782ac4" />
+
 
 
 <H2>Core Idea</H2>
